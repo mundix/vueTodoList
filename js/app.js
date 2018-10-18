@@ -28,6 +28,9 @@ const app = new Vue({
                 });
             }
             this.newTask = "";
+        },
+        deleteTask:function(index) {
+            this.tasks.splice(index,1);
         }
     }
 })
