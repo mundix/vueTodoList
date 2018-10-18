@@ -9,13 +9,17 @@
 
     <script src="node_modules/vue/dist/vue.js"></script>
 </head>
-<body>
-    <div id="app">
+<body class="container">
+    <div id="app" class="jumbotron">
         <h1 v-text="title"></h1>
-        <input type="text" placeholder="New Task" v-model="newTask">
-        <button v-on:click="addTask">Add</button>
-        <ul>
-            <li v-for="task in  tasks">
+        <div class="input-group">
+            <input type="text" placeholder="New Task" v-model="newTask" class="form-control">
+            <span class="input-group-btn">
+                <button v-on:click="addTask" class="btn btn-primary" >Add</button>
+            </span>
+        </div>
+        <ul class="list-group">
+            <li v-for="task in  tasks" class="list-group-item">
                 {{task.text}}
             </li>
         </ul>
