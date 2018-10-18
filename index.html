@@ -12,20 +12,20 @@
     <div id="app" class="jumbotron">
         <h1 v-text="title"></h1>
         <div class="input-group">
-            <input type="text" placeholder="New Task" v-model="newTask" class="form-control">
+            <input type="text" placeholder="Enter New Task" v-model="newTask" class="form-control" v-on:keyup.enter="addTask()">
             <span class="input-group-btn">
-                <button v-on:click="addTask" class="btn btn-xs btn-primary" >Add</button>
+                <button v-on:click="addTask()" class="btn btn-xs btn-primary" >Add</button>
             </span>
         </div>
         <ul class="list-group">
-            <li v-for="(task, index) of tasks" class="list-group-item" v-bind:class="{finished: task.finished}">
+            <li v-for="(task, index) of tasks" class="list-group-item"  v-bind:class="{finished: task.finished}">
                 {{task.text}}
                 <span class="float-right">
-                    <button type="button" class="btn btn-success " v-on:click="task.finished = !task.finished">
+                    <button type="button" class="btn btn-success" v-show="!task.finished"  v-on:click="task.finished = !task.finished">
                             <i class="fas fa-check"></i>
                     </button>
 
-                    <button type="button" class="btn btn-danger " v-on:click="deleteTask(index)">
+                    <button type="button" class="btn btn-danger" v-show="!task.finished" v-on:click="deleteTask(index)">
                             <i class="fas fa-trash-alt"></i>
                     </button>
                 </span>
