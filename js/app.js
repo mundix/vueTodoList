@@ -1,7 +1,12 @@
+Vue.component('titulo',{
+    template: '<h2>{{titulo}}</h2>',
+    data: function() {
+        return { titulo: 'Todo List'}
+    }
+});
 const app = new Vue({ 
     el: "#app",
     data: {
-        title: 'Todo List',
         tasks : [ 
             {
                 text : "Learn Vue Js",
