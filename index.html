@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <title>Todo List</title> -->
-    <titulo></titulo>  
+    <title>Todo List With Vue JS</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="node_modules/vue/dist/vue.js"></script>
 </head>
 <body class="container">
     <div id="app" class="jumbotron">
-        <h1 v-text="title"></h1>
+        <titulo></titulo>  
         <div class="input-group">
             <input type="text" placeholder="Enter New Task" v-model="newTask" class="form-control" v-on:keyup.enter="addTask()">
             <span class="input-group-btn">

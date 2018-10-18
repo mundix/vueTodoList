@@ -1,5 +1,5 @@
 Vue.component('titulo',{
-    template: '<h2>{{titulo}}</h2>',
+    template: '<h2>titulo</h2>',
     data: function() {
         return { titulo: 'Todo List'}
     }
